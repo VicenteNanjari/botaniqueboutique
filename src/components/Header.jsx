@@ -19,6 +19,9 @@ function Header() {
             <li className="nav-item">
               <Link className="nav-link" to="/login">Login</Link>
             </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/Gallery">Galería</Link>
+            </li>
             {/* Agrega más enlaces según sea necesario */}
           </ul>
         </div>
