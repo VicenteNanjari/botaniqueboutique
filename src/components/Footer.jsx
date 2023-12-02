@@ -9,7 +9,7 @@ function Footer() {
         <div className="row">
           <div className="col-md-6 text-center text-md-left">
             <h5>Mi Tienda E-commerce</h5>
-            <p>Descripción o eslogan de tu tienda.</p>
+            <p>Eslogan</p>
           </div>
           <div className="col-md-6 text-center text-md-right">
             <h5>Contacto</h5>
