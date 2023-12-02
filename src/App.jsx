@@ -8,7 +8,7 @@ import Home from './views/Home.jsx'
 function App() {
   return(
     <Router>
-      <Home/>
+      <Home />
       <Header />
       <Footer />
     </Router>
