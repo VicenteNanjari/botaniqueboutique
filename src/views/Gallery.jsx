@@ -1,5 +1,3 @@
-//Aquí va la vista de la Galería
-
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 
 const Gallery = () => {

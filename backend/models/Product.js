@@ -1,6 +1,6 @@
 // models/Product.js
-const { Sequelize, DataTypes } = require('sequelize');
-const sequelize = require('../config/db');
+import { Sequelize, DataTypes, BulkRecordError } from 'sequelize';
+import sequelize from '../config/database.js';
 
 const Product = sequelize.define('Product', {
     // Define los atributos del modelo
@@ -13,7 +13,7 @@ const Product = sequelize.define('Product', {
         allowNull: false
     },
     precio: {
-        type: DataTypes.DECIMAL(10, 2), // Ajusta la precisión según tus necesidades
+        type: DataTypes.INTEGER,
         allowNull: false
     },
     imagen: {
@@ -24,8 +24,9 @@ const Product = sequelize.define('Product', {
         type: DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 0 // Puede ser útil tener un valor predeterminado
-    },
-    // Agrega otros campos que consideres necesarios
+    }
 });
 
-module.exports = Product;
+
+
+export default Product;
