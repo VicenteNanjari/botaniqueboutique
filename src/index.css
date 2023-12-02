@@ -14,6 +14,23 @@ header {
  z-index: 2;
 }
 
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  text-align: center;
+  background-image: url('../src/img/diseñoIAhome.png');
+
+}
+
+.bienvenida {
+  text-align: justify;
+  line-height: 1.5em;
+  width: 50%;
+  margin: 2% 5%;
+  font-size: 26px;
+}
 
 footer {
   position: bottom;

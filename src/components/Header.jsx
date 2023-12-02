@@ -11,16 +11,16 @@ function Header() {
         <div className="collapse navbar-collapse">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item">
-              <Link className="nav-link" to="/">Inicio</Link>
+              <Link className="nav-link" to="/Gallery">Galería</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/">Home</Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/registro">Registro</Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/login">Login</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/Gallery">Galería</Link>
             </li>
             {/* Agrega más enlaces según sea necesario */}
           </ul>
