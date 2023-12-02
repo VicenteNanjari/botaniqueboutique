@@ -1,0 +1,1 @@
+//Aquí va la vista de la Galería
