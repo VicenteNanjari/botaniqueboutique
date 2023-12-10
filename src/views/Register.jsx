@@ -1,42 +1,66 @@
-//Formulario de Registro.
+import React, { useState } from 'react';
+import axios from 'axios';
+import '../css/registro.css';
 
-const Register = () => {
-  return (
-    <div className="container mt-5">
-      <div className="row justify-content-center">
-        <div className="col-md-6">
-          <div className="card">
-            <div className="card-body">
-              <h2 className="text-center mb-4">Registro</h2>
-              <form>
-                <div className="form-group">
-                  <label>Nombre:</label>
-                  <input type="text" className="form-control" placeholder="Ingresa tu nombre" />
-                </div>
+const Registro = () => {
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [email, setEmail] = useState('');
+    const [error, setError] = useState('');
 
-                <div className="form-group">
-                  <label>Email:</label>
-                  <input type="email" className="form-control" placeholder="Ingresa tu email" />
-                </div>
+    const handleRegistro = async (e) => {
+        e.preventDefault();
 
-                <div className="form-group">
-                  <label>Contraseña:</label>
-                  <input type="password" className="form-control" placeholder="Ingresa tu contraseña" />
-                </div>
+        try {
+            const response = await axios.post('http://localhost:3000/usuarios/registro', {
+                username,
+                password,
+                email
+            });
 
-                <div className="form-group">
-                  <label>Confirmar Contraseña:</label>
-                  <input type="password" className="form-control" placeholder="Confirma tu contraseña" />
-                </div>
+            if (response.data.token) {
+                // Almacenar el JWT en localStorage o en la memoria de la aplicación
+                localStorage.setItem('token', response.data.token);
+                alert('Registro exitoso!');
+                // Redirigir al usuario o realizar otra acción
+            }
+        } catch (err) {
+            if (err.response) {
+                // El servidor respondió con un estado fuera del rango 2xx
+                setError(err.response.data.mensaje);
+            } else {
+                setError('Error al realizar el registro');
+            }
+        }
+    };
 
-                <button type="submit" className="btn btn-primary btn-block">Registrarse</button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+    return (
+    <div className="registro-container">
+      <h2>Registro de Usuario</h2>
+      {error && <p>{error}</p>}
+      <form onSubmit={handleRegistro}>
+          <input 
+              type="text"
+              placeholder="Nombre de usuario"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+          />
+          <input 
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+          />
+          <input 
+              type="password"
+              placeholder="Contraseña"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+          />
+          <button type="submit">Registrarse</button>
+      </form>
+  </div>
+    );
 };
 
-export default Register;
+export default Registro;

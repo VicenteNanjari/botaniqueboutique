@@ -1,51 +1,62 @@
-
-import { useState } from 'react';
-import { Form, Button } from 'react-bootstrap';
+import React, { useState } from 'react';
+import axios from 'axios';
+import '../css/login.css';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
-  // Estados para almacenar el nombre de usuario y la contraseña
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
+    const navigate = useNavigate(); // Inicializar useNavigate
 
-  // Función para manejar el envío del formulario
-  const handleSubmit = (e) => {
-    e.preventDefault();
+    const handleLogin = async (e) => {
+        e.preventDefault();
 
-    // Aquí puedes realizar la lógica de autenticación, como enviar los datos al servidor
+        try {
+            const response = await axios.post('http://localhost:3000/usuarios/login', {
+                username,
+                password
+            });
 
-    // Por ahora, solo mostramos los datos en la consola
-    console.log('Username:', username);
-    console.log('Password:', password);
-  };
+            if (response.data.token) {
+                localStorage.setItem('token', response.data.token);
+                localStorage.setItem('id', response.data.usuario.id);
+                alert('Inicio de sesión exitoso!');
+                console.log(response.data);
+                const userId = response.data.usuario.id;
+                navigate(`/usuarios/${userId}`); // Redirigir al perfil del usuario
+            }
+        } catch (err) {
+            // Manejo de errores
+            if (err.response) {
+                setError(err.response.data.mensaje);
+            } else {
+                setError('Error al iniciar sesión');
+            }
+        }
+    };
 
-  return (
-    <div>
-      <h2>Iniciar Sesión</h2>
-      <Form onSubmit={handleSubmit}>
-        <Form.Group controlId="formUsername">
-          <Form.Label>Usuario:</Form.Label>
-          <Form.Control
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-        </Form.Group>
-
-        <Form.Group controlId="formPassword">
-          <Form.Label>Contraseña:</Form.Label>
-          <Form.Control
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </Form.Group>
-
-        <Button variant="primary" type="submit">
-          Iniciar Sesión
-        </Button>
-      </Form>
-    </div>
-  );
+    return (
+        <div className="login-container">
+            <h2>Iniciar Sesión</h2>
+            {error && <p>{error}</p>}
+            <form onSubmit={handleLogin}>
+                <input
+                    type="text"
+                    placeholder="Usuario"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                />
+                <input
+                    type="password"
+                    placeholder="Contraseña"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                />
+                <button type="submit">Iniciar Sesión</button>
+            </form>
+        </div>
+    );
 };
 
 export default Login;

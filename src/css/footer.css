@@ -1,0 +1,7 @@
+footer {
+    height: 110px; /* La altura real de tu footer */
+    position:fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: small;
+}

@@ -1,0 +1,33 @@
+.product-showcase {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .product-card {
+    flex-basis: calc(33.333% - 20px); /* Tres elementos por fila */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    background-color: white;
+  }
+  
+  .product-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .product-card h3 {
+    margin-top: 10px;
+  }
+  
+  /* Ajusta para pantallas más pequeñas */
+  @media (max-width: 768px) {
+    .product-card {
+      flex-basis: calc(50% - 20px); /* Dos elementos por fila */
+    }
+  }
+  

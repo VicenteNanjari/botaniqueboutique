@@ -1,0 +1,59 @@
+.header {
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    height: 50px; /* Ajusta el tamaño según sea necesario */
+}
+
+.right-nav-icons {
+    margin-left: auto;
+    justify-content: end;
+}
+
+.navbar-expand-lg {
+    justify-content: end;
+}
+.navbar-nav {
+    justify-content: flex-end;
+}
+
+@media (min-width: 992px) {
+    .navbar-nav {
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .navbar-brand {
+        position: static;
+        transform: none;
+    }
+
+    .navbar-collapse {
+        flex-basis: auto;
+    }
+}
+
+/* Estilos para el ícono del carrito y Mi Perfil */
+.fa-shopping-cart, .fa-user {
+    margin-right: 5px; /* Espaciado entre el ícono y el texto */
+}
+
+.cart-item-count {
+    position: relative;
+    top: -8px; /* Ajusta según sea necesario */
+    right: -10px; /* Ajusta según sea necesario */
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.75rem;
+    font-weight: bold;
+}

@@ -1,14 +1,16 @@
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
+import e from 'express';
 dotenv.config();
 
-
 const verificarAutenticacion = (req, res, next) => {
-    const token = req.headers.authorization;
+    const authHeader = req.headers.authorization;
 
-    if (!token) {
+    if (!authHeader) {
         return res.status(401).json({ mensaje: 'Acceso denegado. No se proporcionó token.' });
     }
+
+    const token = authHeader.split(' ')[1]; // Separar el prefijo 'Bearer' del token
 
     try {
         const verificado = jwt.verify(token, process.env.JWT_SECRET);
@@ -18,5 +20,4 @@ const verificarAutenticacion = (req, res, next) => {
         res.status(400).json({ mensaje: 'Token inválido.' });
     }
 };
-
 export default verificarAutenticacion;

@@ -1,0 +1,26 @@
+.plant-care-info {
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f0f0f0; /* Fondo claro para la sección */
+    border-radius: 7px;
+  }
+  
+  .plant-care-columns {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .column {
+    flex: 1; /* Cada columna ocupa un espacio igual */
+    max-width: 300px; /* O un máximo que prefieras */
+    padding: 10px;
+    background-color: white; /* Fondo para las columnas */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera para resaltar */
+  }
+  
+  .column h3 {
+    color: #4CAF50; /* Color para los títulos de las columnas */
+  }
+  

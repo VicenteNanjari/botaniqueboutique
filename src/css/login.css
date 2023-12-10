@@ -1,0 +1,65 @@
+/* Login.css */
+.login-container {
+    max-width: 350px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #3e4e50;
+    /* Ajusta el color para que coincida con tu imagen */
+}
+
+.login-container input {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    /* Bordes redondeados como en la imagen */
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+    display: block;
+    /* Asegúrate de que el input se trate como un bloque */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.login-container input::placeholder {
+    color: #888;
+}
+
+.login-container button {
+    width: 9rem;
+    padding: 0.5rem 1rem;
+    background-color: #8a7e66;
+    /* Color de fondo del botón */
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    display: block;
+    /* Asegúrate de que el input se trate como un bloque */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.login-container button:hover {
+    background-color: #746952;
+    /* Color del botón al pasar el ratón por encima */
+}
+
+.login-container p {
+    color: #ff6b6b;
+    text-align: center;
+}
+
+/* Puedes necesitar añadir más estilos para detalles como íconos y enlaces */

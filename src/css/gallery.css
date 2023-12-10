@@ -1,0 +1,36 @@
+/* GaleriaProductos.css */
+.title{
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    color: #f0f0f0;
+    background-color:rgb(107, 112, 92);
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.card {
+  background-color: #f8f9fa; /* Un color de fondo claro */
+  border: none; /* Sin bordes */
+}
+
+.card-title {
+  color: #6c757d; /* Un color de texto más oscuro para el título */
+}
+
+.card-text {
+  color: #6c757d; /* Un color de texto más oscuro para la descripción */
+}
+
+.card-img-top {
+  height: 400px; /* Ajusta la altura según sea necesario */
+  object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+}
+
+.container {
+  max-width: 90%;
+  padding-bottom: 180px;
+  box-sizing: border-box;
+}
+
+/* Puedes añadir más estilos personalizados aquí */

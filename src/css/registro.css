@@ -1,0 +1,55 @@
+/* RegistroUsuario.css */
+.registro-container {
+    max-width: 400px;
+    margin: auto;
+    background-color: #f4f4f4; /* Ajusta al color de fondo que prefieras */
+    padding: 2rem;
+    margin-top: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .registro-container h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #3e4e50; /* O el color que corresponda al diseño */
+  }
+  
+  .registro-container form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .registro-container input {
+    background-color: #fff; /* Color de fondo para los inputs */
+    border: 1px solid #ccc; /* Borde de los inputs */
+    border-radius: 7px; /* Redondear las esquinas */
+    padding: 0.75rem;
+    margin-bottom: 1rem; /* Espacio entre los inputs */
+    font-size: 1rem;
+  }
+  
+  .registro-container button {
+    width: 14rem;
+    background-color: #8a7e66; /* Color de fondo para el botón */
+    color: white; /* Color del texto del botón */
+    padding: 0.75rem;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: block;
+    /* Asegúrate de que el input se trate como un bloque */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .registro-container button:hover {
+    background-color: #746952; /* Color del botón al pasar el ratón por encima */
+  }
+  
+  .registro-container p {
+    color: #ff6b6b; /* Color para los mensajes de error */
+    text-align: center;
+  }
+  
